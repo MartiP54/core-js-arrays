@@ -365,8 +365,15 @@ function createChunks(/* arr, chunkSize */) {
  *    generateOdds(2) => [ 1, 3 ]
  *    generateOdds(5) => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const arr = [];
+  new Array(len * 2).fill(0).map((item, index) => {
+    if ((index + 1) % 2 !== 0) {
+      arr.push(index + 1);
+    }
+    return arr;
+  });
+  return arr;
 }
 
 /**
